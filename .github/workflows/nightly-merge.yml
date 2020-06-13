@@ -5,8 +5,13 @@ jobs:
   dev:
     name: Nightly Merge
     runs-on: ubuntu-16.04
+    uses: robotology/gh-action-nightly-merge@v1.2.0
     steps:
-    - uses: robotology/gh-action-nightly-merge@v1.2.0
-      with:
+      - name: dev
+        with:
           development_branch: 'dev'
           push_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: demo
+        with:
+            development_branch: 'demo'
+            push_token: ${{ secrets.GITHUB_TOKEN }}: i
