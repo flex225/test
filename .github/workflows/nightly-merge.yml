@@ -2,7 +2,7 @@ name: Sync branches
 on:
   push:
 jobs:
-  dev:
+  build:
     name: Nightly Merge
     runs-on: ubuntu-16.04
     steps:
