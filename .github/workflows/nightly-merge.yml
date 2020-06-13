@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Sync branches
+
+on: 
+  push:
+jobs:
+  build:
+    name: Gitflow
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: Logerfo/gitflow-action@0.0.4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        dev: demo
+        label: sync with master
+    - uses: Logerfo/gitflow-action@0.0.4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        dev: dev
+        label: sync with master
