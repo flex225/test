@@ -1,0 +1,18 @@
+name: Sync branches
+on:
+  push:
+jobs:
+  dev:
+    name: Nightly Merge (dev)
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: robotology/gh-action-nightly-merge@v1.2.0
+      with:
+          development_branch: 'dev'
+  demo:
+    name: Nightly Merge (demo)
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: robotology/gh-action-nightly-merge@v1.2.0
+      with:
+          development_branch: 'demo'
