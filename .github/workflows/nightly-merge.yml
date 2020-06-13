@@ -1,19 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
 name: Sync branches
-on:
+
+on: 
   push:
 jobs:
-  dev:
-    name: Nightly Merge
+  build:
+    name: Gitflow
     runs-on: ubuntu-16.04
     steps:
-      - uses: robotology/gh-action-nightly-merge@v1.2.0
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          development_branch: dev
-      - uses: robotology/gh-action-nightly-merge@v1.2.0
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          development_branch: demo
-          push_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: Logerfo/gitflow-action@0.0.4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        dev: demo
+        label: sync with master
+    - uses: Logerfo/gitflow-action@0.0.4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        dev: dev
+        label: sync with master
