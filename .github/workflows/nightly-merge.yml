@@ -9,8 +9,11 @@ jobs:
       - uses: robotology/gh-action-nightly-merge@v1.2.0
         with:
           development_branch: 'dev'
-          push_token: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: robotology/gh-action-nightly-merge@v1.2.0
         with:
           development_branch: 'demo'
           push_token: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
