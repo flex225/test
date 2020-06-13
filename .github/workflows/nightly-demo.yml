@@ -1,5 +1,0 @@
-- name: Nightly Merge (demo)
-  uses: robotology/gh-action-nightly-merge@v1.2.0
-  with:
-    # Name of the demo branch
-    development_branch: demo
