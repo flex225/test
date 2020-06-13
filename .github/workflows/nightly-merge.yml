@@ -11,7 +11,7 @@ jobs:
           development_branch: 'dev'
           push_token: ${{ secrets.GITHUB_TOKEN }}
   demo:
-    name: Nightly Merge
+    name: Nightly Merge dev
     runs-on: ubuntu-16.04
     steps:
     - uses: robotology/gh-action-nightly-merge@v1.2.0
