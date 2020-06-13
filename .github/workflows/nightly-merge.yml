@@ -3,15 +3,14 @@ on:
   push:
 jobs:
   dev:
-    name: Nightly Merge
+    name: Nightly Merge (dev)
     runs-on: ubuntu-16.04
     steps:
       - uses: robotology/gh-action-nightly-merge@v1.2.0
-      - name: dev
         with:
           development_branch: 'dev'
           push_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: demo
+      - uses: robotology/gh-action-nightly-merge@v1.2.0
         with:
           development_branch: 'demo'
           push_token: ${{ secrets.GITHUB_TOKEN }}
